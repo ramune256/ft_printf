@@ -96,3 +96,15 @@ int ft_printf(const char *format, ...)
 	va_end(args);
 	return (count);
 }
+
+// 後で消す
+int	main(void)
+{
+	int	char_count;
+	int	dummy;
+
+	dummy = 0;
+	char_count = ft_printf("Hello %s, %c, %d, %u, %x, %X, %p, %%, %i\n", "World", '!', 123, 456, 789, 1011, &dummy, 123);
+	ft_printf("char_count: %d\n", char_count);
+	return (0);
+}
