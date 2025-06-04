@@ -6,7 +6,7 @@
 /*   By: shunwata <shunwata@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/29 20:46:07 by shunwata          #+#    #+#             */
-/*   Updated: 2025/06/04 13:08:10 by shunwata         ###   ########.fr       */
+/*   Updated: 2025/06/04 13:30:13 by shunwata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_putstr(char *str);
 int ft_putnbr_base(unsigned long long n, int base, int uppercase);
 int ft_putnbr(int n);
 
-static int	process_format(va_list args, char format);
+int	process_format(va_list args, char format);
 int ft_printf(const char *format, ...);
 
 #endif
