@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: shunwata <shunwata@student.42.fr>          +#+  +:+       +#+         #
+#    By: shunwata <shunwata@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/30 16:13:12 by shunwata          #+#    #+#              #
-#    Updated: 2025/05/16 00:17:52 by shunwata         ###   ########.fr        #
+#    Updated: 2025/06/04 20:51:50 by shunwata         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 

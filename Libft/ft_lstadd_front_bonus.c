@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: shunwata <shunwata@student.42.fr>          +#+  +:+       +#+        */
+/*   By: shunwata <shunwata@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/10 23:41:29 by shunwata          #+#    #+#             */
-/*   Updated: 2025/05/14 18:42:13 by shunwata         ###   ########.fr       */
+/*   Updated: 2025/06/04 20:49:21 by shunwata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

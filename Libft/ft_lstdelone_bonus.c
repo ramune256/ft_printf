@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstdelone_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: shunwata <shunwata@student.42.fr>          +#+  +:+       +#+        */
+/*   By: shunwata <shunwata@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/14 18:26:13 by shunwata          #+#    #+#             */
-/*   Updated: 2025/05/14 21:05:39 by shunwata         ###   ########.fr       */
+/*   Updated: 2025/06/04 20:49:26 by shunwata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
