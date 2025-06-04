@@ -6,13 +6,13 @@
 /*   By: shunwata <shunwata@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/29 20:52:58 by shunwata          #+#    #+#             */
-/*   Updated: 2025/05/29 21:41:25 by shunwata         ###   ########.fr       */
+/*   Updated: 2025/06/04 13:34:59 by shunwata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	process_format(va_list args, char format)
+int	process_format(va_list args, char format)
 {
 	int		count;
 	void	*ptr;
