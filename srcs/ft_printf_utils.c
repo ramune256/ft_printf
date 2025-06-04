@@ -6,18 +6,18 @@
 /*   By: shunwata <shunwata@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/29 20:52:23 by shunwata          #+#    #+#             */
-/*   Updated: 2025/05/29 20:52:55 by shunwata         ###   ########.fr       */
+/*   Updated: 2025/06/04 13:04:59 by shunwata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	ft_putchar(char c)
+int	ft_putchar(char c)
 {
 	return write(1, &c, 1);
 }
 
-static int	ft_putstr(char *str)
+int	ft_putstr(char *str)
 {
 	int count;
 
@@ -29,7 +29,7 @@ static int	ft_putstr(char *str)
 	return (count);
 }
 
-static int ft_putnbr_base(unsigned long long n, int base, int uppercase)
+int ft_putnbr_base(unsigned long long n, int base, int uppercase)
 {
 	char	*digits;
 	int		count;
@@ -42,7 +42,7 @@ static int ft_putnbr_base(unsigned long long n, int base, int uppercase)
 	return (count);
 }
 
-static int ft_putnbr(int n)
+int ft_putnbr(int n)
 {
 	int count;
 
