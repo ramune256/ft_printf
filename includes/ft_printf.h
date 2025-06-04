@@ -6,7 +6,7 @@
 /*   By: shunwata <shunwata@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/29 20:46:07 by shunwata          #+#    #+#             */
-/*   Updated: 2025/06/04 21:03:44 by shunwata         ###   ########.fr       */
+/*   Updated: 2025/06/04 22:07:20 by shunwata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <unistd.h>
 # include <stdarg.h>
+# include "libft.h"
 
 int	ft_putchar(char c);
 int	ft_putstr(char *str);

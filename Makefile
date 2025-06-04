@@ -6,11 +6,11 @@
 #    By: shunwata <shunwata@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/29 21:01:03 by shunwata          #+#    #+#              #
-#    Updated: 2025/05/29 21:26:30 by shunwata         ###   ########.fr        #
+#    Updated: 2025/06/04 22:06:43 by shunwata         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ft_printf.a
+NAME = libftprintf.a
 
 SRC_DIR = srcs
 INC_DIR = includes
@@ -23,13 +23,14 @@ SRCS = $(addprefix $(SRC_DIR)/, ft_printf.c ft_printf_utils.c)
 OBJS = $(SRCS:.c=.o)
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -I $(INC_DIR)
+CFLAGS = -Wall -Wextra -Werror -I $(INC_DIR) -I $(LIBFT_DIR)
 
 
 all: $(NAME) $(LIBFT)
 
 $(NAME): $(OBJS) $(LIBFT)
-	ar rcs $(NAME) $(OBJS) $(LIBFT)
+	cp $(LIBFT) $(NAME)
+	ar rcs $(NAME) $(OBJS)
 
 $(SRC_DIR)/%.o: $(SRC_DIR)/%.c
 	$(CC) $(CFLAGS) -c $< -o $@
