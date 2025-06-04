@@ -6,7 +6,7 @@
 /*   By: shunwata <shunwata@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/29 20:52:23 by shunwata          #+#    #+#             */
-/*   Updated: 2025/06/04 13:04:59 by shunwata         ###   ########.fr       */
+/*   Updated: 2025/06/04 21:06:26 by shunwata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,30 @@
 
 int	ft_putchar(char c)
 {
-	return write(1, &c, 1);
+	return (write(1, &c, 1));
 }
 
 int	ft_putstr(char *str)
 {
-	int count;
+	int	count;
 
 	count = 0;
 	if (!str)
-		return ft_putstr("(null)");
+		return (ft_putstr("(null)"));
 	while (str[count])
 		ft_putchar(str[count++]);
 	return (count);
 }
 
-int ft_putnbr_base(unsigned long long n, int base, int uppercase)
+int	ft_putnbr_base(unsigned long long n, int base, int uppercase)
 {
 	char	*digits;
 	int		count;
 
-	digits = uppercase ? "0123456789ABCDEF" : "0123456789abcdef";
+	if (uppercase)
+		digits = "0123456789ABCDEF";
+	else
+		digits = "0123456789abcdef";
 	count = 0;
 	if (n >= (unsigned long long)base)
 		count += ft_putnbr_base(n / base, base, uppercase);
@@ -42,9 +45,9 @@ int ft_putnbr_base(unsigned long long n, int base, int uppercase)
 	return (count);
 }
 
-int ft_putnbr(int n)
+int	ft_putnbr(int n)
 {
-	int count;
+	int	count;
 
 	count = 0;
 	if (n == -2147483648)
