@@ -6,7 +6,7 @@
 /*   By: shunwata <shunwata@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/29 20:52:58 by shunwata          #+#    #+#             */
-/*   Updated: 2025/06/04 21:04:17 by shunwata         ###   ########.fr       */
+/*   Updated: 2025/06/08 21:47:09 by shunwata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 int	process_format(va_list args, char format)
 {
 	int		count;
-	void	*ptr;
 
 	count = 0;
 	if (format == 'c')
@@ -23,11 +22,7 @@ int	process_format(va_list args, char format)
 	else if (format == 's')
 		count += ft_putstr(va_arg(args, char *));
 	else if (format == 'p')
-	{
-		ptr = va_arg(args, void *);
-		count += ft_putstr("0x");
-		count += ft_putnbr_base((unsigned long)ptr, 16, 0);
-	}
+		count += put_pointer(va_arg(args, void *));
 	else if (format == 'd' || format == 'i')
 		count += ft_putnbr(va_arg(args, int));
 	else if (format == 'u')
