@@ -6,7 +6,7 @@
 /*   By: shunwata <shunwata@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/29 20:52:23 by shunwata          #+#    #+#             */
-/*   Updated: 2025/06/08 21:51:55 by shunwata         ###   ########.fr       */
+/*   Updated: 2025/06/09 14:05:00 by shunwata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,12 +62,12 @@ int	ft_putnbr(int n)
 
 int	put_pointer(void *ptr)
 {
-	int count;
+	int	count;
 
 	count = 0;
 	if (ptr == NULL)
 		return (ft_putstr("(nil)"));
 	count += ft_putstr("0x");
 	count += ft_putnbr_base((unsigned long)ptr, 16, 0);
-	return count;
+	return (count);
 }
