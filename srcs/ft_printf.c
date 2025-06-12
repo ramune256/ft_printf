@@ -6,7 +6,7 @@
 /*   By: shunwata <shunwata@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/29 20:52:58 by shunwata          #+#    #+#             */
-/*   Updated: 2025/06/08 21:47:09 by shunwata         ###   ########.fr       */
+/*   Updated: 2025/06/12 13:58:11 by shunwata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ int	ft_printf(const char *format, ...)
 	int		count;
 
 	count = 0;
+	if (format == NULL)
+		return (-1);
 	va_start(args, format);
 	while (*format)
 	{
