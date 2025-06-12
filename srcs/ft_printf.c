@@ -6,7 +6,7 @@
 /*   By: shunwata <shunwata@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/29 20:52:58 by shunwata          #+#    #+#             */
-/*   Updated: 2025/06/12 13:58:11 by shunwata         ###   ########.fr       */
+/*   Updated: 2025/06/12 14:33:11 by shunwata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	process_format(va_list args, char format)
 		count += ft_putnbr_base(va_arg(args, unsigned int), 16, 0);
 	else if (format == 'X')
 		count += ft_putnbr_base(va_arg(args, unsigned int), 16, 1);
-	else if (format == '%')
+	else
 		count += ft_putchar('%');
 	return (count);
 }
