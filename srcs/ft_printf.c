@@ -6,7 +6,7 @@
 /*   By: shunwata <shunwata@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/29 20:52:58 by shunwata          #+#    #+#             */
-/*   Updated: 2025/06/13 15:09:14 by shunwata         ###   ########.fr       */
+/*   Updated: 2025/06/13 18:05:20 by shunwata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,11 @@ int	process_format(va_list args, char format)
 	else if (format == 'd' || format == 'i')
 		result = ft_putnbr(va_arg(args, int));
 	else if (format == 'u')
-		result = ft_putnbr_base((unsigned long)va_arg(args, unsigned int), 10, 0);
+		result = ft_putnbr_base(va_arg(args, unsigned int), 10, 0);
 	else if (format == 'x')
-		result = ft_putnbr_base((unsigned long)va_arg(args, unsigned int), 16, 0);
+		result = ft_putnbr_base(va_arg(args, unsigned int), 16, 0);
 	else if (format == 'X')
-		result = ft_putnbr_base((unsigned long)va_arg(args, unsigned int), 16, 1);
+		result = ft_putnbr_base(va_arg(args, unsigned int), 16, 1);
 	else if (format == '%')
 		result = ft_putchar('%');
 	else
