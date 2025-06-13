@@ -6,7 +6,7 @@
 /*   By: shunwata <shunwata@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/29 20:52:58 by shunwata          #+#    #+#             */
-/*   Updated: 2025/06/12 13:58:11 by shunwata         ###   ########.fr       */
+/*   Updated: 2025/06/13 15:09:14 by shunwata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,46 +14,51 @@
 
 int	process_format(va_list args, char format)
 {
-	int		count;
+	int		result;
 
-	count = 0;
 	if (format == 'c')
-		count += ft_putchar(va_arg(args, int));
+		result = ft_putchar(va_arg(args, int));
 	else if (format == 's')
-		count += ft_putstr(va_arg(args, char *));
+		result = ft_putstr(va_arg(args, char *));
 	else if (format == 'p')
-		count += put_pointer(va_arg(args, void *));
+		result = put_pointer(va_arg(args, void *));
 	else if (format == 'd' || format == 'i')
-		count += ft_putnbr(va_arg(args, int));
+		result = ft_putnbr(va_arg(args, int));
 	else if (format == 'u')
-		count += ft_putnbr_base(va_arg(args, unsigned int), 10, 0);
+		result = ft_putnbr_base((unsigned long)va_arg(args, unsigned int), 10, 0);
 	else if (format == 'x')
-		count += ft_putnbr_base(va_arg(args, unsigned int), 16, 0);
+		result = ft_putnbr_base((unsigned long)va_arg(args, unsigned int), 16, 0);
 	else if (format == 'X')
-		count += ft_putnbr_base(va_arg(args, unsigned int), 16, 1);
+		result = ft_putnbr_base((unsigned long)va_arg(args, unsigned int), 16, 1);
 	else if (format == '%')
-		count += ft_putchar('%');
-	return (count);
+		result = ft_putchar('%');
+	else
+		return (-1);
+	return (result);
 }
 
 int	ft_printf(const char *format, ...)
 {
 	va_list	args;
 	int		count;
+	int		result;
 
 	count = 0;
-	if (format == NULL)
+	if (!format)
 		return (-1);
 	va_start(args, format);
 	while (*format)
 	{
 		if (*format == '%' && *(format + 1))
-		{
-			format++;
-			count += process_format(args, *format);
-		}
+			result = process_format(args, *(++format));
 		else
-			count += ft_putchar(*format);
+			result = ft_putchar(*format);
+		if (result == -1)
+		{
+			va_end(args);
+			return (-1);
+		}
+		count += result;
 		format++;
 	}
 	va_end(args);

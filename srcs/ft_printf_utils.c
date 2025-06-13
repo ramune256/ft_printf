@@ -6,7 +6,7 @@
 /*   By: shunwata <shunwata@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/29 20:52:23 by shunwata          #+#    #+#             */
-/*   Updated: 2025/06/09 14:05:00 by shunwata         ###   ########.fr       */
+/*   Updated: 2025/06/13 15:02:07 by shunwata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,60 +14,100 @@
 
 int	ft_putchar(char c)
 {
-	return (write(1, &c, 1));
+	int	result;
+
+	result = write(1, &c, 1);
+	if (result == -1)
+		return (-1);
+	return (result);
 }
 
 int	ft_putstr(char *str)
 {
 	int	count;
+	int	result;
 
 	count = 0;
 	if (!str)
 		return (ft_putstr("(null)"));
 	while (str[count])
-		ft_putchar(str[count++]);
+	{
+		result = ft_putchar(str[count]);
+		if (result == -1)
+			return (-1);
+		count++;
+	}
 	return (count);
 }
 
-int	ft_putnbr_base(unsigned long long n, int base, int uppercase)
+int	ft_putnbr_base(unsigned long n, int base, int uppercase)
 {
 	char	*digits;
 	int		count;
+	int		result;
 
+	if (base < 2 || base > 16)
+		return (-1);
 	if (uppercase)
 		digits = "0123456789ABCDEF";
 	else
 		digits = "0123456789abcdef";
 	count = 0;
-	if (n >= (unsigned long long)base)
-		count += ft_putnbr_base(n / base, base, uppercase);
-	count += ft_putchar(digits[n % base]);
-	return (count);
+	if (n >= (unsigned long)base)
+	{
+		result = ft_putnbr_base(n / base, base, uppercase);
+		if (result == -1)
+			return (-1);
+		count += result;
+	}
+	result = ft_putchar(digits[n % base]);
+	if (result == -1)
+		return (-1);
+	return (count + result);
 }
 
 int	ft_putnbr(int n)
 {
 	int	count;
+	int	result;
 
 	count = 0;
 	if (n == -2147483648)
-		return (ft_putstr("-2147483648"));
+	{
+		result = ft_putstr("-2147483648");
+		if (result == -1)
+			return (-1);
+		return (result);
+	}
 	if (n < 0)
 	{
-		count += ft_putchar('-');
+		result = ft_putchar('-');
+		if (result == -1)
+			return (-1);
+		count += result;
 		n = -n;
 	}
-	return (count + ft_putnbr_base(n, 10, 0));
+	result = ft_putnbr_base(n, 10, 0);
+	if (result == -1)
+		return (-1);
+	return (count + result);
 }
 
 int	put_pointer(void *ptr)
 {
 	int	count;
+	int	result;
 
 	count = 0;
 	if (ptr == NULL)
 		return (ft_putstr("(nil)"));
-	count += ft_putstr("0x");
-	count += ft_putnbr_base((unsigned long)ptr, 16, 0);
+	result = ft_putstr("0x");
+	if (result == -1)
+		return (-1);
+	count += result;
+	result = ft_putnbr_base((unsigned long)ptr, 16, 0);
+	if (result == -1)
+		return (-1);
+	count += result;
 	return (count);
 }
